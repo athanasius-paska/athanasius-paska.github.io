@@ -1,7 +1,15 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Returning to Jazz Auto</title></head><body>
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Returning to Jazz Auto</title>
+<style>body{font-family:system-ui,sans-serif;text-align:center;margin:3rem 1rem}a.btn{display:inline-block;margin-top:1.5rem;padding:.9rem 1.6rem;background:#111;color:#fff;border-radius:8px;text-decoration:none}</style>
+</head><body>
 <p>Returning to the Jazz Auto app...</p>
+<p>If nothing happens, tap the button below.</p>
+<a id="open" class="btn" href="#">Open Jazz Auto</a>
 <script>
   var q = window.location.search || "";
-  window.location.replace("jazzauto://tiktok-callback" + q);
+  var intentUrl = "intent://tiktok-callback" + q + "#Intent;scheme=jazzauto;package=com.paska.jazzauto;end";
+  document.getElementById("open").href = intentUrl;
+  window.location.replace(intentUrl);
 </script>
 </body></html>
